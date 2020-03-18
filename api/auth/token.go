@@ -1,3 +1,5 @@
+package auth
+
 import (
 	"encoding/json"
 	"fmt"
