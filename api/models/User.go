@@ -70,12 +70,12 @@ func ( u *User ) Validate( action string ) error {
 
 			return nil
 		case "login":
+			if u.Password == "" {
+				return errors.New( "Required Password" )
+			}
+			
 			if u.Email == "" {
 				return errors.New( "Required Email" )
-			}
-
-			if u.Password == {
-				return errors.New( "Required Password" )
 			}
 
 			if err := checkmail.ValidateFormat( u.Email ); err != nil {
