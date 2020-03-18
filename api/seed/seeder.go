@@ -48,7 +48,7 @@ func Load(db *gorm.DB) {
 	}
 
 	for i, _ := range users {
-		err = db.Debug().Model(&models.User{}).Create(&user[i]).Error
+		err = db.Debug().Model(&models.User{}).Create(&users[i]).Error
 		if err != nil {
 			log.Fatalf("cannot seed users table: %v", err)
 		}
