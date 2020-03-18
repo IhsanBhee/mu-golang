@@ -9,14 +9,16 @@ import (
 	"github.com/jinzhu/gorm"
 
 	_ "github.com/jinzhu/gorm/dialects/postgres"
+
+	"github.com/IhsanBhee/mu-golang/api/models"
 )
 
 type Server struct {
 	DB     *gorm.DB
-	Router *mux.Route
+	Router *mux.Router
 }
 
-func (server *Server) Initialize(DbDriver, DbHost, DbName, DbPort, DbUser, DbPass string) {
+func (server *Server) Initialize(DbDriver, DbHost, DbPort, DbName, DbUser, DbPass string) {
 	var err error
 
 	if DbDriver == "postgres" {

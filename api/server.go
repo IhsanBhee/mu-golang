@@ -5,8 +5,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/ihsanbhee/mu-golang/api/controllers"
-	"github.com/ihsanbhee/mu-golang/api/seed"
+	"github.com/IhsanBhee/mu-golang/api/controllers"
+	"github.com/IhsanBhee/mu-golang/api/seed"
 	"github.com/joho/godotenv"
 )
 
@@ -21,8 +21,8 @@ func Run() {
 		fmt.Println("We are getting the env values")
 	}
 
-	server.Initialize(os.Getenv("DB_DRIVER"), os.Getenv("DB_USER"), os.Getenv("DB_PASSWORD"),
-		os.Getenv("DB_HOST"), os.Getenv("DB_PORT"), os.Getenv("DB_NAME"))
+	server.Initialize(os.Getenv("DB_DRIVER"), os.Getenv("DB_HOST"), os.Getenv("DB_PORT"),
+		os.Getenv("DB_NAME"), os.Getenv("DB_USER"), os.Getenv("DB_PASSWORD"))
 
 	seed.Load(server.DB)
 

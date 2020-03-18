@@ -1,6 +1,6 @@
 package main
 
-import "github.com/ihsanbhee/mu-golang/api"
+import "github.com/IhsanBhee/mu-golang/api"
 
 func main() {
 	api.Run()

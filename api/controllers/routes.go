@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"github.com/ihsanbhee/mu-golang/api/middlewares"
+	"github.com/IhsanBhee/mu-golang/api/middlewares"
 )
 
 func (s *Server) initializeRoutes() {

@@ -9,10 +9,10 @@ import (
 	"strconv"
 
 	"github.com/gorilla/mux"
-	"github.com/ihsanbhee/mu-golang/api/auth"
-	"github.com/ihsanbhee/mu-golang/api/models"
-	"github.com/ihsanbhee/mu-golang/api/responses"
-	"github.com/ihsanbhee/mu-golang/api/utils/formaterror"
+	"github.com/IhsanBhee/mu-golang/api/auth"
+	"github.com/IhsanBhee/mu-golang/api/models"
+	"github.com/IhsanBhee/mu-golang/api/responses"
+	"github.com/IhsanBhee/mu-golang/api/utils/formaterror"
 )
 
 func ( server *Server ) save( w, http.ResponseWriter, r *http.Request ) {

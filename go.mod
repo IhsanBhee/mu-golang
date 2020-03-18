@@ -1,4 +1,4 @@
-module github.com/ihsanbhee/mu-golang
+module github.com/IhsanBhee/mu-golang
 
 go 1.13
 

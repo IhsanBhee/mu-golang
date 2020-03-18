@@ -3,7 +3,7 @@ package controllers
 import (
 	"net/http"
 
-	"github.com/ihsanbhee/mu-golang/api/responses"
+	"github.com/IhsanBhee/mu-golang/api/responses"
 )
 
 func (server *Server) home(w http.ResponseWriter, r *http.Request) {

@@ -5,9 +5,11 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"github.com/ihsanbhee/mu-golang/api/models"
-	"github.com/ihsanbhee/mu-golang/api/responses"
-	"github.com/ihsanbhee/mu-golang/api/utils/formaterror"
+	"github.com/IhsanBhee/mu-golang/api/auth"
+	"github.com/IhsanBhee/mu-golang/api/models"
+	"github.com/IhsanBhee/mu-golang/api/responses"
+	"github.com/IhsanBhee/mu-golang/api/utils/formaterror"
+	"golang.org/x/crypto/bcrypt"
 )
 
 func (server *Server) login(w http.ResponseWriter, r *http.Request) {
@@ -44,20 +46,16 @@ func (server *Server) login(w http.ResponseWriter, r *http.Request) {
 func (server *Server) SignIn(email, password string) (string, error) {
 	var err error
 	user := models.User{}
-	err := server.DB.Debug()
-			.Model( models.User{} )
-			.Where( "email = ?", email )
-			.Take( &user )
-			.Error
+	err = server.DB.Debug().Model(models.User{}).Where("email = ?", email).Take(&user).Error
 
 	if err != nil {
 		return "", err
 	}
 
-	err = models.VerifyPassword( user.Password, password )
+	err = models.VerifyPassword(user.Password, password)
 	if err != nil && err == bcrypt.ErrMismatchedHashAndPassword {
 		return "", err
 	}
 
-	return auth.CreateToken( user.ID )
+	return auth.CreateToken(user.ID)
 }
