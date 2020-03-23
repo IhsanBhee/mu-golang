@@ -8,6 +8,6 @@ require (
 	github.com/gorilla/mux v1.7.4
 	github.com/jinzhu/gorm v1.9.12
 	github.com/joho/godotenv v1.3.0
-	golang.org/x/crypto v0.0.0-20200214034016-1d94cc7ab1c6
+	golang.org/x/crypto v0.0.0-20200320181102-891825fb96df
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 )

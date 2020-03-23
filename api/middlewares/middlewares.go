@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	"github.com/IhsanBhee/mu-golang/api/auth"
+	"github.com/IhsanBhee/mu-golang/api/responses"
 )
 
 func SetMiddlewareJSON(next http.HandlerFunc) http.HandlerFunc {
@@ -20,7 +21,7 @@ func SetMiddlewareAuthentication(next http.HandlerFunc) http.HandlerFunc {
 		err := auth.TokenValid(r)
 
 		if err != nil {
-			response.ERROR(w, http.StatusUnauthorized, errors.New("Unauthorized"))
+			responses.ERROR(w, http.StatusUnauthorized, errors.New("Unauthorized"))
 			return
 		}
 
